@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "running"
-if [[ $GIT_BRANCH == "origin/dev" ]]; then
+if [[ $GIT_BRANCH == "dev" ]]; then
     # Build your project
     sh 'chmod +x build.sh'
     sh './build.sh'
@@ -8,7 +8,7 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
     docker tag test arun05docker/dev
     docker push arun05docker/dev
 
-elif [[ $GIT_BRANCH == "origin/main" ]]; then
+elif [[ $GIT_BRANCH == "main" ]]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     docker login -u arun05docker -p dckr_pat_KJmqw8P99rDytytfrgDCg96OC8E
